@@ -50,24 +50,18 @@ namespace PracticHome_010
             //Console.ReadKey();
 
             // Домашнее задание //
-            try
-            {
 
-                User user = new User();
-                user.UserLogin("dima@mail.ru", "9asf9", "9asf9");
+            if (User.IsValid("Dima@mail.ru", "123qweASD", "123qweASD")) Console.WriteLine("User Confirm");
+            if (User.IsValid("login with space", "123qweASD", "123qweASD")) Console.WriteLine("User Confirm");
+            if (User.IsValid("login", "Dima@mail.ru", "123qweASD")) Console.WriteLine("User Confirm");
+            if (User.IsValid("Dima@mail.ru", "pass word", "123qweASD")) Console.WriteLine("User Confirm");
+            if (User.IsValid("Dima@mail.ru", "withoutdigit", "123qweASD")) Console.WriteLine("User Confirm");
+            if (User.IsValid("Dima@mail.ru", "123qweASD", "123QWEesd")) Console.WriteLine("User Confirm");
+            if (User.IsValid("Dima@mail.ru", "123qweASD", "123qweASD")) Console.WriteLine("User Confirm");
 
-                Console.WriteLine($"User + Login: {user}");
-            }
-            catch (WrongLoginException ex)
-            {
-               Console.WriteLine($"Error: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
 
             Console.ReadKey();
+
 
 
 
